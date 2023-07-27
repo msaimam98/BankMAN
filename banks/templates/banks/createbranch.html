@@ -1,0 +1,13 @@
+{% extends './basebanks.html' %}
+{% block title %}Add Bank{% endblock %}
+{% block content %}
+<h2>Add a Branch for your Bank!</h2>
+<!-- bank_id refers to the arg in the url, bank_id2 refers to the context that was passed in  -->
+<form class="container" action="{% url 'banks:add_branch' bank_id=bank_id2 %}" 
+      method="POST">
+{% csrf_token %}      
+{% include './form.html' %}
+<button type="submit">Add Branch!</button>
+</form>
+
+{% endblock %}

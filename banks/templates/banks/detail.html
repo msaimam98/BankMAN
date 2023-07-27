@@ -1,0 +1,23 @@
+{% extends './basebanks.html' %}
+{% block title %}Bank Detail{% endblock %}
+{% block content %}
+
+
+
+    <h1>Your Bank is: {{ bank.name }}</h1>
+    <h3>The following are all relevant details:</h3>
+    <ul>
+
+
+        <li>Swift Code: {{ bank.swift_code }}</li>
+        <li>Institution Number: {{ bank.inst_num }}</li>
+        <li>Description: {{ bank.description }}</li>
+
+
+
+    </ul>
+
+
+
+
+{% endblock %}

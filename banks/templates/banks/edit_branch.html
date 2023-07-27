@@ -1,0 +1,16 @@
+{% extends "./basebanks.html" %}
+{% block title %}Edit Branch{% endblock %}
+{% block content %}
+<h2>You can now edit the Branch information</h2>
+<form class="container" action="{% url 'banks:branch_edit' branch_id=branch_id2 %}" 
+      method="POST">
+{% csrf_token %}      
+    
+{% include './form.html' %}
+<button type="submit">Edit</button>
+</form>
+<!-- <p><a href="{% url 'accounts:register' %}">Need an account?</a></p> -->
+{% endblock %}
+
+
+<!-- branch_id=branch_id2  -->

@@ -1,0 +1,19 @@
+{% extends './base.html' %}
+
+{% block title %}Welcome Page{% endblock %}
+
+{% block content %}
+{% csrf_token %}    
+<h1>Welcome!</h1>
+<p>
+  {% if from == "signup" %}
+  Account registration was successful.
+  {% elif from == "logout" %}
+  You have been successfully logged out.
+  {% else %}
+  Welcome to the account management page.
+  {% endif %}
+  Click <a href="{% url 'accounts:login' %}">here to login</a>
+  or <a href="{% url 'accounts:register' %}">here to register</a>.
+</p>
+{% endblock %}

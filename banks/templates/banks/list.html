@@ -1,0 +1,12 @@
+{% extends './basebanks.html' %}
+{% block title %}Show All Banks{% endblock %}
+{% block content %}
+<h2>Here is a list of all the Banks</h2>
+<ul> 
+    {% for bank in object_list %}
+    <li> Bank ID: {{ bank.id }} <br> Bank Name: {{bank.name}}</li>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}

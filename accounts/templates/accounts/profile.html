@@ -1,0 +1,13 @@
+{% extends "./base.html" %}
+{% block title %}Edit Profile{% endblock %}
+{% block content %}
+<h2>You can now edit the information on your profile</h2>
+<form class="container" action="{% url 'accounts:profile_edit' %}" 
+      method="POST">
+{% csrf_token %}      
+    
+{% include './form.html' %}
+<button type="submit">Edit</button>
+</form>
+<!-- <p><a href="{% url 'accounts:register' %}">Need an account?</a></p> -->
+{% endblock %}

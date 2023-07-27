@@ -1,0 +1,31 @@
+
+
+<!-- dont touch this code now. When the code asked us to show the error above the field, only when the field is empty is when we need -->
+
+
+{% for field in form %}
+
+
+{% if field.errors %}
+{% for error in field.errors %}
+{% if 'required' in error %}
+<label>{# empty label for grid column #}</label>
+<p class="error">{{ error }}</p>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{{ field.label_tag }}{{ field }}
+
+{% if field.errors %}
+{% for error in field.errors %}
+{% if 'required' not in error %}
+<label>{# empty label for grid column #}</label>
+<p class="error">{{ error }}</p>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+
+
+{% endfor %}

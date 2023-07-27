@@ -1,0 +1,12 @@
+{% extends './basebanks.html' %}
+{% block title %}Add Bank{% endblock %}
+{% block content %}
+<h2>Add your Bank!</h2>
+<form class="container" action="{% url 'banks:add_bank' %}" 
+      method="POST">
+{% csrf_token %}      
+{% include './form.html' %}
+<button type="submit">Add Bank!</button>
+</form>
+
+{% endblock %}

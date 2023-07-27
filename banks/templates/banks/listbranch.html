@@ -1,0 +1,13 @@
+{% extends './basebanks.html' %}
+{% block title %}Show All Branches in Current Bank{% endblock %}
+{% block content %}
+<h2>Here is a list of all the Branches</h2>
+
+<ul> 
+    {% for branch in object_list %}
+    <li> Branch ID: {{ branch.id }} <br> Branch Name: {{branch.name}}</li>
+    {% endfor %}
+
+</ul>
+
+{% endblock %}
